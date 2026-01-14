@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Container, Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { results } from "@/lib/data/results";
+import { questionsLite, questionsPremium } from "@/lib/data/questions";
 import { calculateResult } from "@/lib/logic";
 import { Loader2, Share2, RefreshCw } from "lucide-react";
 
@@ -15,6 +16,8 @@ export default function ResultPage() {
 
     useEffect(() => {
         const savedAnswers = localStorage.getItem("vitaos_answers");
+        const savedMode = localStorage.getItem("vitaos_mode");
+
         if (!savedAnswers) {
             router.push("/start");
             return;
@@ -22,8 +25,10 @@ export default function ResultPage() {
 
         try {
             const answers = JSON.parse(savedAnswers);
-            // Ensure specific questions are answered or just calculate based on what we have
-            const code = calculateResult(answers);
+            // Determine which questions set to use
+            const questionsList = savedMode === 'LITE' ? questionsLite : questionsPremium;
+
+            const code = calculateResult(answers, questionsList);
             setResultCode(code);
 
             // Simulate analysis delay for effect

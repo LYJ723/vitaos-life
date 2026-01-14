@@ -9,7 +9,85 @@ export interface Question {
     subType?: string; // e.g., 'F', 'P', 'I', 'O', etc. for reference
 }
 
-export const questions: Question[] = [
+export const questionsLite: Question[] = [
+    // ① TIME 축 — 현재(P) vs 미래(F)
+    // [A. 신념: 미래 지향] -> Standard, F
+    { id: 1, text: "당장의 육체적, 정신적 불편함이 따르더라도, 그것이 장기적인 목표 달성에 필수적이라면 기꺼이 감수한다.", axis: 'TIME', type: 'Standard', subType: 'F' },
+    { id: 2, text: "현재 즉각적으로 얻을 수 있는 만족감보다는, 5년 혹은 10년 뒤에 얻게 될 거대한 성과가 내 삶의 방향성을 결정한다.", axis: 'TIME', type: 'Standard', subType: 'F' },
+    { id: 3, text: "오늘 내리는 사소한 결정 하나가 나비효과처럼 훗날 나의 인생에 어떤 파장을 미칠지 습관적으로 시뮬레이션한다.", axis: 'TIME', type: 'Standard', subType: 'F' },
+    { id: 4, text: "달성하고자 하는 미래의 비전이 선명할수록, 현재 겪는 고통이나 인내의 시간을 견디는 것이 수월해진다.", axis: 'TIME', type: 'Standard', subType: 'F' },
+
+    // [B. 역신념: 현재 지향 (역채점)] -> Reverse, P
+    { id: 5, text: "불확실한 미래를 대비한다는 명목으로 지금 누릴 수 있는 행복을 과도하게 억제하는 것은 어리석다고 생각한다.", axis: 'TIME', type: 'Reverse', subType: 'P' },
+    { id: 6, text: "10년 뒤의 막연한 성공보다 오늘 하루 내가 느끼는 구체적인 기쁨과 안락함이 내 인생에서 더 중요하다.", axis: 'TIME', type: 'Reverse', subType: 'P' },
+    { id: 7, text: "미래는 누구도 예측할 수 없으므로, 계획에 얽매이기보다 현재 흐름에 몸을 맡기고 즐기는 것이 현명하다고 본다.", axis: 'TIME', type: 'Reverse', subType: 'P' },
+    { id: 8, text: "'고진감래'와 같이 현재의 고통을 미화하며 희생을 강요하는 사고방식은 내 성향과 맞지 않는다.", axis: 'TIME', type: 'Reverse', subType: 'P' },
+
+    // [C. 행동: 상황 판단] -> Situation, F (All choices favor Future/Investment)
+    { id: 9, text: "주말에 아무것도 하지 않고 쉬는 것보다, 미래의 커리어나 자기계발을 위해 강의를 듣거나 책을 읽는 것을 택한다.", axis: 'TIME', type: 'Situation', subType: 'F' },
+    { id: 10, text: "지금 당장 100만 원을 받는 것보다, 1년 뒤에 확실하게 150만 원을 받을 수 있는 조건을 선택한다.", axis: 'TIME', type: 'Situation', subType: 'F' },
+    { id: 11, text: "연봉이 높지만 발전이 없는 직장보다, 당장은 배고파도 폭발적인 성장 가능성이 있는 초기 스타트업을 선호한다.", axis: 'TIME', type: 'Situation', subType: 'F' },
+    { id: 12, text: "당장의 소비로 얻는 만족감보다, 자산을 불려 나중에 얻게 될 경제적 자유(Time Rich)를 위해 저축/투자를 택한다.", axis: 'TIME', type: 'Situation', subType: 'F' },
+
+    // ② ENERGY 축 — 내적(I) vs 외적(O)
+    // [A. 신념: 내적 에너지] -> Standard, I
+    { id: 13, text: "나는 타인과 함께 있을 때보다 혼자만의 공간에서 사색할 때 가장 강력한 에너지와 영감을 얻는다.", axis: 'ENERGY', type: 'Standard', subType: 'I' },
+    { id: 14, text: "얕고 넓게 여러 일을 처리하는 것보다, 하나의 주제에 깊이 파고들어 끝장을 보는 몰입의 시간이 반드시 필요하다.", axis: 'ENERGY', type: 'Standard', subType: 'I' },
+    { id: 15, text: "인생의 중요한 결정을 내릴 때, 타인의 조언보다는 나 스스로 깊이 숙고한 끝에 내린 결론을 따른다.", axis: 'ENERGY', type: 'Standard', subType: 'I' },
+    { id: 16, text: "아무리 좋은 사람들과의 만남이라도, 장시간 지속되면 기가 빨리는 느낌이 들어 혼자만의 충전 시간이 필요하다.", axis: 'ENERGY', type: 'Standard', subType: 'I' },
+
+    // [B. 역신념: 외적 에너지 (역채점)] -> Reverse, O
+    { id: 17, text: "혼자 고민할 때보다 사람들과 어울려 대화하고 부대낄 때 에너지가 샘솟고 살아있음을 느낀다.", axis: 'ENERGY', type: 'Reverse', subType: 'O' },
+    { id: 18, text: "책상 앞에서의 고민보다 타인과의 대화나 브레인스토밍 과정에서 훨씬 더 좋은 아이디어가 떠오른다.", axis: 'ENERGY', type: 'Reverse', subType: 'O' },
+    { id: 19, text: "내가 한 일에 대해 주변 사람들이 어떻게 반응하고 평가하는지가 나의 만족도에 지대한 영향을 미친다.", axis: 'ENERGY', type: 'Reverse', subType: 'O' },
+    { id: 20, text: "혼자 있는 시간이 길어지면 고립감을 느끼거나 답답해서 견디기 힘들 때가 많다.", axis: 'ENERGY', type: 'Reverse', subType: 'O' },
+
+    // [C. 행동: 상황 판단] -> Situation, I
+    { id: 21, text: "문제가 발생했을 때 누군가에게 상의하기보다, 일단 혼자서 원인을 분석하고 해결책을 정리하는 편이다.", axis: 'ENERGY', type: 'Situation', subType: 'I' },
+    { id: 22, text: "새로운 분야를 배울 때 스터디 모임에 나가기보다, 관련 서적이나 자료를 찾아 혼자 깊이 파고드는 방식을 택한다.", axis: 'ENERGY', type: 'Situation', subType: 'I' },
+    { id: 23, text: "휴가나 주말에는 친구들을 만나기보다, 집에서 쉬거나 혼자만의 취미 생활을 하며 에너지를 충전한다.", axis: 'ENERGY', type: 'Situation', subType: 'I' },
+    { id: 24, text: "스트레스를 받으면 사람을 만나 수다를 떨기보다, 혼자서 삭히거나 명상, 독서 등을 통해 해소한다.", axis: 'ENERGY', type: 'Situation', subType: 'I' },
+
+    // ③ VALUE 축 — 의미(M) vs 보상(R)
+    // [A. 신념: 의미 지향] -> Standard, M
+    { id: 25, text: "연봉이나 수익이 아무리 높아도, 그 일이 사회적으로나 개인적으로 의미가 없다고 느껴지면 선택하지 않는다.", axis: 'VALUE', type: 'Standard', subType: 'M' },
+    { id: 26, text: "단순히 돈을 버는 것보다, 세상에 필요한 무언가를 기여하고 있다는 느낌이 들 때 깊은 만족감을 느낀다.", axis: 'VALUE', type: 'Standard', subType: 'M' },
+    { id: 27, text: "돈은 나의 비전을 실현하기 위한 수단일 뿐, 돈 자체가 인생의 궁극적인 목표가 될 수는 없다고 믿는다.", axis: 'VALUE', type: 'Standard', subType: 'M' },
+    { id: 28, text: "내가 죽은 뒤에 세상에 무엇을 남길 것인가(Legacy)에 대해 평소에 자주 생각하고 고민한다.", axis: 'VALUE', type: 'Standard', subType: 'M' },
+
+    // [B. 역신념: 보상 지향 (역채점)] -> Reverse, R
+    { id: 29, text: "아무리 좋은 의도와 과정을 가졌더라도, 결과적인 수치나 성과가 없다면 그 일은 의미가 없다고 본다.", axis: 'VALUE', type: 'Reverse', subType: 'R' },
+    { id: 30, text: "자본주의 사회에서 돈이 되지 않는 일을 열정만으로 지속하는 것은 현실 감각이 없는 행동이다.", axis: 'VALUE', type: 'Reverse', subType: 'R' },
+    { id: 31, text: "솔직히 말해서, 내 인생의 가장 큰 목표는 경제적 자유와 풍요로운 부를 축적하는 것이다.", axis: 'VALUE', type: 'Reverse', subType: 'R' },
+    { id: 32, text: "성공의 척도는 감상적인 의미보다는 객관적인 숫자(매출, 연봉, 자산)로 증명되어야 한다.", axis: 'VALUE', type: 'Reverse', subType: 'R' },
+
+    // [C. 행동: 상황 판단] -> Situation, M
+    { id: 33, text: "직업이나 사업 아이템을 고를 때, '돈이 되는 트렌드'보다 '내 가치관과 맞는가'를 최우선 기준으로 삼는다.", axis: 'VALUE', type: 'Situation', subType: 'M' },
+    { id: 34, text: "누군가 \"그 일을 왜 하세요?\"라고 물으면 \"돈 벌려고요\"가 아닌, 나만의 철학적인 이유를 즉시 답할 수 있다.", axis: 'VALUE', type: 'Situation', subType: 'M' },
+    { id: 35, text: "사업 파트너를 구할 때 능력이 뛰어나도 가치관이 다르면 거절하고, 능력이 부족해도 결이 같은 사람을 택한다.", axis: 'VALUE', type: 'Situation', subType: 'M' },
+    { id: 36, text: "효율성과 사람에 대한 배려가 충돌하는 상황이 오면, 조금 돌아가더라도 사람에게 도움이 되는 쪽을 택한다.", axis: 'VALUE', type: 'Situation', subType: 'M' },
+
+    // ④ STRATEGY 축 — 안정(S) vs 확장(E)
+    // [A. 신념: 안정 지향] -> Standard, S
+    { id: 37, text: "불규칙한 대박보다는 예측 가능한 범위 내에서 돌아가는 루틴과 시스템이 갖춰져야 마음이 편하다.", axis: 'STRATEGY', type: 'Standard', subType: 'S' },
+    { id: 38, text: "한순간에 타오르고 꺼지는 성장보다는, 얇고 길더라도 오래 지속 가능한(Sustainable) 모델을 선호한다.", axis: 'STRATEGY', type: 'Standard', subType: 'S' },
+    { id: 39, text: "실패했을 때 잃을 것이 너무 크다면, 차라리 도전을 멈추고 현재 상태를 유지하는 쪽을 택한다.", axis: 'STRATEGY', type: 'Standard', subType: 'S' },
+    { id: 40, text: "일과 삶의 균형(워라밸)이 깨질 정도로 무리하게 사업이나 일을 확장하는 것은 두렵다.", axis: 'STRATEGY', type: 'Standard', subType: 'S' },
+
+    // [B. 역신념: 확장 지향 (역채점)] -> Reverse, E
+    { id: 41, text: "현재의 안정감에 안주하는 것은 도태되는 지름길이며, 성장을 가로막는 가장 큰 적이라고 생각한다.", axis: 'STRATEGY', type: 'Reverse', subType: 'E' },
+    { id: 42, text: "비즈니스나 인생은 속도전이다. 기회가 왔을 때 빠르게 덩치를 키우고 시장을 선점해야(Scale-up) 한다.", axis: 'STRATEGY', type: 'Reverse', subType: 'E' },
+    { id: 43, text: "인생을 바꿀 수 있는 큰 기회라면, 가진 것을 잃을 수도 있는 위험(Risk)을 기꺼이 감수하고 베팅한다.", axis: 'STRATEGY', type: 'Reverse', subType: 'E' },
+    { id: 44, text: "더 좋은 기회가 포착되면, 기존에 하던 일을 과감히 접고 즉시 태세를 전환(Pivot)할 수 있다.", axis: 'STRATEGY', type: 'Reverse', subType: 'E' },
+
+    // [C. 행동: 상황 판단] -> Situation, E
+    { id: 45, text: "매달 꼬박꼬박 들어오는 월급 300만 원보다, 수입은 0원일 수 있어도 월 3,000만 원을 벌 가능성이 있는 사업을 택한다.", axis: 'STRATEGY', type: 'Situation', subType: 'E' },
+    { id: 46, text: "완벽한 제품을 만들기 위해 1년을 준비하기보다, 60% 완성도라도 한 달 만에 출시하여 시장 반응을 본다.", axis: 'STRATEGY', type: 'Situation', subType: 'E' },
+    { id: 47, text: "투자를 할 때 '원금 보장'형 상품보다, 원금 손실 위험이 있어도 '수익률 상한이 없는' 상품에 투자한다.", axis: 'STRATEGY', type: 'Situation', subType: 'E' },
+    { id: 48, text: "실패했을 때의 비난이나 자책보다, 아무것도 하지 않았을 때의 후회를 더 견디기 힘들어한다.", axis: 'STRATEGY', type: 'Situation', subType: 'E' },
+];
+
+export const questionsPremium: Question[] = [
     // ① TIME 축 — 현재(P) vs 미래(F)
     // A. Standard (미래 지향 · F)
     { id: 1, text: "당장의 육체적, 정신적 불편함이 따르더라도, 그것이 장기적인 목표 달성에 필수적이라면 기꺼이 감수한다.", axis: 'TIME', type: 'Standard', subType: 'F' },
@@ -182,3 +260,5 @@ export const questions: Question[] = [
     { id: 143, text: "여유 자금이 생기면 저축(안정)하기보다, 내 사업이나 자기계발에 전액 재투자(확장)하여 레버리지를 일으킨다.", axis: 'STRATEGY', type: 'Situation', subType: 'E' },
     { id: 144, text: "아직 충분히 검증되지는 않았더라도, 내 직관이 확신을 주면 기존 계획을 과감히 전부 바꾼다.", axis: 'STRATEGY', type: 'Situation', subType: 'E' },
 ];
+
+export const questions = questionsPremium; // Default fallback if needed

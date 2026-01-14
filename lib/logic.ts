@@ -1,6 +1,6 @@
-import { questions, Question } from "./data/questions";
+import { Question } from "./data/questions";
 
-export function calculateResult(answers: Record<number, number>): string {
+export function calculateResult(answers: Record<number, number>, questionsList: Question[]): string {
     const scores = {
         TIME: { F: 0, P: 0, F_count: 0, P_count: 0 },
         ENERGY: { I: 0, O: 0, I_count: 0, O_count: 0 },
@@ -8,7 +8,7 @@ export function calculateResult(answers: Record<number, number>): string {
         STRATEGY: { S: 0, E: 0, S_count: 0, E_count: 0 },
     };
 
-    questions.forEach((q) => {
+    questionsList.forEach((q) => {
         const value = answers[q.id] || 4; // Default to neutral if unanswered (shouldn't happen)
 
         // Determine which pole this question measures
