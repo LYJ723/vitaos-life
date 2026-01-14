@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { Hero } from "@/components/sections/hero";
+import { GravityHero } from "@/components/sections/gravity-hero";
 import { Problem } from "@/components/sections/problem";
 import { Framework } from "@/components/sections/framework";
 import { HowItWorks } from "@/components/sections/how-it-works";
@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background selection:bg-gold/20 selection:text-gold-dark">
       <Header />
       <main className="flex-1">
-        <Hero />
+        <GravityHero />
         <Problem />
         <Framework />
         <HowItWorks />
