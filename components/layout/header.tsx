@@ -40,13 +40,13 @@ export function Header() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled
-                    ? "bg-white/80 backdrop-blur-md border-b border-border py-4"
+                    ? "bg-black/80 backdrop-blur-md border-b border-white/10 py-4"
                     : "bg-transparent py-6"
             )}
         >
             <Container className="flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-serif font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity">
+                <Link href="/" className="text-2xl font-serif font-bold tracking-tight text-white hover:text-gold transition-colors">
                     VITAOS
                 </Link>
 
@@ -56,19 +56,19 @@ export function Header() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            className="text-sm font-medium text-gray-400 hover:text-gold transition-colors"
                         >
                             {item.name}
                         </Link>
                     ))}
                     <Link href="/start">
-                        <Button variant="primary" size="sm">시작하기</Button>
+                        <Button variant="primary" size="sm" className="bg-white text-black hover:bg-gray-200">시작하기</Button>
                     </Link>
                 </nav>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden p-2 text-foreground"
+                    className="md:hidden p-2 text-white"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
@@ -78,7 +78,7 @@ export function Header() {
 
             {/* Mobile Nav */}
             {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-border p-4 shadow-lg animate-in slide-in-from-top-2">
+                <div className="md:hidden absolute top-full left-0 right-0 bg-[#0A0A0A] border-b border-white/10 p-4 shadow-lg animate-in slide-in-from-top-2">
                     <nav className="flex flex-col gap-4">
                         {navItems.map((item) => (
                             <Link

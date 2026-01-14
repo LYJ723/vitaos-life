@@ -101,33 +101,33 @@ export default function AssessmentWizard() {
     // 1. Selection Screen
     if (mode === 'IDLE') {
         return (
-            <Section className="bg-gray-50 min-h-screen flex items-center">
+            <Section className="bg-[#0A0A0A] min-h-screen flex items-center">
                 <Container className="max-w-5xl">
                     <div className="text-center mb-12">
-                        <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4 break-keep leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 break-keep leading-tight">
                             검사 유형을 선택해주세요
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-600 font-serif leading-relaxed px-4 break-keep">
+                        <p className="text-lg md:text-xl text-gray-400 font-serif leading-relaxed px-4 break-keep">
                             당신의 상황에 맞는 최적의 검사를 시작해보세요.
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {/* Lite Card */}
-                        <div className="bg-white rounded-2xl p-8 border-2 border-transparent hover:border-gold/30 transition-all shadow-xl hover:shadow-2xl group cursor-pointer relative overflow-hidden"
+                        <div className="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-gold/30 transition-all shadow-xl hover:shadow-2xl hover:bg-white/10 group cursor-pointer relative overflow-hidden"
                             onClick={() => handleStart('LITE')}>
-                            <div className="absolute top-0 right-0 bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                            <div className="absolute top-0 right-0 bg-white/10 text-gray-300 text-xs font-bold px-3 py-1 rounded-bl-lg">
                                 LITE
                             </div>
                             <div className="mb-6">
-                                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
-                                    <Clock className="w-8 h-8 text-gray-600 group-hover:text-gold" />
+                                <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
+                                    <Clock className="w-8 h-8 text-gray-400 group-hover:text-gold" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">라이트 버전</h3>
-                                <p className="text-gray-500 font-medium">약 3분 소요 (48문항)</p>
+                                <h3 className="text-2xl font-bold text-white mb-2">라이트 버전</h3>
+                                <p className="text-gray-400 font-medium">약 3분 소요 (48문항)</p>
                             </div>
 
-                            <ul className="space-y-3 mb-8 text-gray-600">
+                            <ul className="space-y-3 mb-8 text-gray-400">
                                 <li className="flex items-start">
                                     <CheckCircle2 className="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5" />
                                     <span>핵심 문항만 엄선하여 빠르게 진단</span>
@@ -142,13 +142,13 @@ export default function AssessmentWizard() {
                                 </li>
                             </ul>
 
-                            <Button className="w-full h-12 text-lg group-hover:bg-gold group-hover:text-white transition-colors" variant="outline">
+                            <Button className="w-full h-12 text-lg border-white/20 text-gray-300 group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-colors" variant="outline">
                                 라이트 버전 시작하기 <ChevronRight className="w-4 h-4 ml-1" />
                             </Button>
                         </div>
 
                         {/* Premium Card */}
-                        <div className="bg-white rounded-2xl p-8 border-2 border-gold ring-4 ring-gold/10 transition-all shadow-xl hover:shadow-2xl group cursor-pointer relative overflow-hidden transform hover:-translate-y-1"
+                        <div className="bg-white/5 rounded-2xl p-8 border-2 border-gold ring-4 ring-gold/10 transition-all shadow-xl hover:shadow-2xl hover:bg-white/10 group cursor-pointer relative overflow-hidden transform hover:-translate-y-1"
                             onClick={() => handleStart('PREMIUM')}>
                             <div className="absolute top-0 right-0 bg-gold text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
                                 PREMIUM
@@ -157,14 +157,14 @@ export default function AssessmentWizard() {
                                 <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-4">
                                     <Sparkles className="w-8 h-8 text-gold" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">프리미엄 정밀 버전</h3>
+                                <h3 className="text-2xl font-bold text-white mb-2">프리미엄 정밀 버전</h3>
                                 <p className="text-gold font-medium">약 10분 소요 (144문항)</p>
                             </div>
 
-                            <ul className="space-y-3 mb-8 text-gray-600">
+                            <ul className="space-y-3 mb-8 text-gray-400">
                                 <li className="flex items-start">
                                     <CheckCircle2 className="w-5 h-5 text-gold mr-2 shrink-0 mt-0.5" />
-                                    <span className="font-medium text-gray-900">VITAOS의 모든 정밀 분석 로직 적용</span>
+                                    <span className="font-medium text-white">VITAOS의 모든 정밀 분석 로직 적용</span>
                                 </li>
                                 <li className="flex items-start">
                                     <CheckCircle2 className="w-5 h-5 text-gold mr-2 shrink-0 mt-0.5" />
@@ -176,7 +176,7 @@ export default function AssessmentWizard() {
                                 </li>
                             </ul>
 
-                            <Button className="w-full h-12 text-lg bg-gold text-white hover:bg-gold/90 border-transparent shadow-gold/20 shadow-lg">
+                            <Button className="w-full h-12 text-lg bg-gold text-black hover:bg-gold-light border-transparent shadow-gold/20 shadow-lg font-bold">
                                 정밀 버전 시작하기 <ChevronRight className="w-4 h-4 ml-1" />
                             </Button>
                         </div>
@@ -188,20 +188,20 @@ export default function AssessmentWizard() {
 
     // 2. Assessment Screen
     return (
-        <Section className="bg-gray-50 min-h-screen pt-24 pb-20">
+        <Section className="bg-[#0A0A0A] min-h-screen pt-24 pb-20">
 
             {/* Fixed Progress Header */}
-            <div className="fixed top-[72px] left-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-40 shadow-sm py-4">
+            <div className="fixed top-[72px] left-0 w-full bg-black/80 backdrop-blur-md border-b border-white/10 z-40 shadow-sm py-4">
                 <Container>
                     <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-gray-500 font-serif">
+                        <span className="text-sm font-medium text-gray-400 font-serif">
                             {mode === 'LITE' ? '라이트 진단' : '정밀 진단'} 진행 중
                         </span>
                         <span className="text-sm font-bold text-gold font-serif">
                             {progress}% ({Object.keys(answers).length} / {questions.length})
                         </span>
                     </div>
-                    <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                         <div
                             className="h-full bg-gold transition-all duration-500 ease-out"
                             style={{ width: `${progress}%` }}
@@ -228,7 +228,7 @@ export default function AssessmentWizard() {
                         variant="ghost"
                         onClick={handlePrev}
                         disabled={currentPage === 0}
-                        className="text-gray-400 hover:text-gray-600"
+                        className="text-gray-500 hover:text-white"
                     >
                         이전
                     </Button>
@@ -239,7 +239,7 @@ export default function AssessmentWizard() {
                                 key={i}
                                 className={cn(
                                     "w-2 h-2 rounded-full transition-colors",
-                                    i === currentPage ? "bg-gold" : "bg-gray-200"
+                                    i === currentPage ? "bg-gold" : "bg-white/20"
                                 )}
                             />
                         ))}
@@ -296,19 +296,19 @@ function QuestionCard({
     onChange: (val: number) => void;
 }) {
     return (
-        <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 transition-all hover:shadow-md">
+        <div className="bg-white/5 rounded-xl p-6 md:p-8 shadow-sm border border-white/10 transition-all hover:bg-white/10">
             <div className="flex items-start gap-4 mb-8">
                 <span className="text-gold font-serif font-bold text-xl md:text-2xl mt-1">
                     Q{index}.
                 </span>
-                <h3 className="text-lg md:text-xl font-medium text-gray-800 leading-relaxed font-serif break-keep">
+                <h3 className="text-lg md:text-xl font-medium text-gray-200 leading-relaxed font-serif break-keep">
                     {question.text}
                 </h3>
             </div>
 
             <div className="relative pt-6 pb-2">
                 {/* Line */}
-                <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-100 -z-10" />
+                <div className="absolute top-1/2 left-0 w-full h-px bg-white/10 -z-10" />
 
                 {/* Options */}
                 <div className="flex justify-between items-center px-1">
@@ -321,7 +321,7 @@ function QuestionCard({
                                 "w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center",
                                 value === num
                                     ? "bg-gold text-white scale-110 shadow-lg ring-4 ring-gold/20"
-                                    : "bg-white border-2 border-gray-200 text-gray-400 hover:border-gold hover:text-gold"
+                                    : "bg-[#1A1A1A] border border-white/10 text-gray-500 hover:border-gold hover:text-gold"
                             )}
                         >
                             <span className="text-sm md:text-lg font-bold">{num}</span>
@@ -330,7 +330,7 @@ function QuestionCard({
                             {num === 1 && (
                                 <span className={cn(
                                     "absolute -bottom-8 left-0 text-xs whitespace-nowrap transition-colors",
-                                    value === num ? "text-gold font-bold" : "text-gray-400"
+                                    value === num ? "text-gold font-bold" : "text-gray-500"
                                 )}>
                                     전혀 아니다
                                 </span>
@@ -338,7 +338,7 @@ function QuestionCard({
                             {num === 7 && (
                                 <span className={cn(
                                     "absolute -bottom-8 right-0 text-xs whitespace-nowrap transition-colors",
-                                    value === num ? "text-gold font-bold" : "text-gray-400"
+                                    value === num ? "text-gold font-bold" : "text-gray-500"
                                 )}>
                                     매우 그렇다
                                 </span>

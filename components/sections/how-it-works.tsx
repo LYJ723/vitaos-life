@@ -21,24 +21,24 @@ const steps = [
 
 export function HowItWorks() {
     return (
-        <Section id="how-it-works" className="bg-white">
+        <Section id="how-it-works" className="bg-black">
             <Container>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">How It Works</h2>
-                    <p className="text-muted-foreground">단 15분, 당신의 삶을 재설계하는 시간</p>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-white">How It Works</h2>
+                    <p className="text-gray-500">단 15분, 당신의 삶을 재설계하는 시간</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 relative">
                     {/* Connector Line (Desktop) */}
-                    <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-gray-100 -z-10" />
+                    <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-px bg-white/10 -z-10" />
 
                     {steps.map((step, idx) => (
-                        <div key={idx} className="relative flex flex-col items-center text-center">
-                            <div className="w-24 h-24 rounded-full bg-white border border-border shadow-sm flex items-center justify-center mb-6 z-10">
-                                <step.icon className="w-10 h-10 text-gold-dark" />
+                        <div key={idx} className="relative flex flex-col items-center text-center group">
+                            <div className="w-24 h-24 rounded-full bg-black border border-white/20 flex items-center justify-center mb-6 z-10 group-hover:border-gold/50 group-hover:text-gold transition-all">
+                                <step.icon className="w-10 h-10 text-gray-300 group-hover:text-gold transition-colors" />
                             </div>
-                            <h3 className="text-xl font-bold font-serif mb-3">{step.title}</h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">{step.desc}</p>
+                            <h3 className="text-xl font-bold font-serif mb-3 text-white">{step.title}</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{step.desc}</p>
                         </div>
                     ))}
                 </div>

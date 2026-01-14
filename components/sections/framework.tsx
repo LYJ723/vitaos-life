@@ -33,36 +33,36 @@ const axes = [
 
 export function Framework() {
     return (
-        <Section id="framework" className="bg-gray-50">
+        <Section id="framework" className="bg-black/40 border-y border-white/5">
             <Container>
                 <div className="text-center mb-16">
-                    <span className="text-gold-dark font-medium tracking-wider uppercase text-sm">VITAOS Analysis Framework</span>
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mt-3 mb-6">4대 축 정밀 분석</h2>
-                    <div className="w-20 h-1 bg-gold mx-auto" />
+                    <span className="text-gold font-medium tracking-wider uppercase text-sm">VITAOS Analysis Framework</span>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mt-3 mb-6 text-white">4대 축 정밀 분석</h2>
+                    <div className="w-20 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
                     {axes.map((axis, idx) => (
-                        <div key={idx} className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-border hover:border-gold/30 transition-colors">
+                        <div key={idx} className="bg-white/5 p-8 md:p-10 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-gold/50 transition-colors group">
                             <div className="flex items-center justify-between mb-4">
-                                <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest border border-border px-2 py-1 rounded">
+                                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest border border-white/10 px-2 py-1 rounded group-hover:text-gold transition-colors">
                                     {axis.code}
                                 </span>
-                                <span className="text-sm font-semibold text-gold-dark">{axis.types}</span>
+                                <span className="text-sm font-semibold text-gold">{axis.types}</span>
                             </div>
-                            <h3 className="text-2xl font-bold font-serif mb-2">{axis.title}</h3>
-                            <p className="text-foreground font-medium mb-2">{axis.desc}</p>
-                            <p className="text-muted-foreground text-sm leading-relaxed">{axis.detail}</p>
+                            <h3 className="text-2xl font-bold font-serif mb-2 text-white">{axis.title}</h3>
+                            <p className="text-gray-300 font-medium mb-2">{axis.desc}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{axis.detail}</p>
                         </div>
                     ))}
                 </div>
 
                 <div className="mt-16 text-center">
-                    <div className="inline-flex items-center max-w-4xl bg-white border border-gold/40 rounded-xl p-6 md:p-8 shadow-lg shadow-gold/5 mx-4">
+                    <div className="inline-flex items-center max-w-4xl bg-black border border-gold/30 rounded-xl p-6 md:p-8 shadow-lg shadow-gold/5 mx-4">
                         <span className="text-4xl mr-6 hidden md:block">🗝️</span>
                         <div className="text-left">
-                            <h4 className="text-lg font-bold font-serif mb-1 text-charcoal">VITAOS의 약속</h4>
-                            <p className="text-muted-foreground text-sm md:text-base">
+                            <h4 className="text-lg font-bold font-serif mb-1 text-white">VITAOS의 약속</h4>
+                            <p className="text-gray-400 text-sm md:text-base">
                                 “이 검사는 당신이 어떤 사람(Personality)이냐를 단정 짓지 않습니다.<br />
                                 지금 당신에게 가장 필요한 <strong>‘삶의 전략(Life Strategy)’</strong>이 무엇인지 보여줍니다.”
                             </p>

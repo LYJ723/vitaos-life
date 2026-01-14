@@ -40,10 +40,10 @@ export function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <Section id="faq" className="bg-gray-50">
+        <Section id="faq" className="bg-black/80">
             <Container className="max-w-3xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">자주 묻는 질문</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-white">자주 묻는 질문</h2>
                 </div>
 
                 <div className="space-y-4">
@@ -52,24 +52,24 @@ export function FAQ() {
                         return (
                             <div
                                 key={idx}
-                                className="bg-white rounded-xl border border-border overflow-hidden transition-all duration-200"
+                                className="bg-white/5 rounded-xl border border-white/10 overflow-hidden transition-all duration-200"
                             >
                                 <button
                                     onClick={() => setOpenIndex(isOpen ? null : idx)}
-                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
                                 >
-                                    <span className={cn("font-medium text-lg", isOpen ? "text-gold-dark" : "text-foreground")}>
+                                    <span className={cn("font-medium text-lg", isOpen ? "text-gold" : "text-gray-200")}>
                                         {faq.q}
                                     </span>
                                     {isOpen ? (
                                         <Minus className="w-5 h-5 text-gold" />
                                     ) : (
-                                        <Plus className="w-5 h-5 text-muted-foreground" />
+                                        <Plus className="w-5 h-5 text-gray-500" />
                                     )}
                                 </button>
                                 <div
                                     className={cn(
-                                        "px-6 text-muted-foreground leading-relaxed overflow-hidden transition-all duration-300 ease-in-out",
+                                        "px-6 text-gray-400 leading-relaxed overflow-hidden transition-all duration-300 ease-in-out",
                                         isOpen ? "max-h-48 pb-6 opacity-100" : "max-h-0 opacity-0"
                                     )}
                                 >

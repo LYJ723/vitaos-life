@@ -3,13 +3,13 @@ import { HelpCircle, AlertTriangle, Lightbulb } from "lucide-react";
 
 export function Problem() {
     return (
-        <Section id="intro" className="bg-white">
+        <Section id="intro" className="bg-black text-foreground">
             <Container>
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
-                        삶은 <span className="text-gold-dark">성격</span>만으로 설명되지 않습니다
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+                        삶은 <span className="text-gold">성격</span>만으로 설명되지 않습니다
                     </h2>
-                    <p className="text-lg text-muted-foreground">
+                    <p className="text-lg text-gray-400">
                         우리는 종종 "나는 원래 이런 사람이야"라는 말 뒤에 숨습니다.
                         <br className="hidden md:block" />하지만 인생의 문제는 성격 탓이 아니라, 맞지 않는 '전략' 탓일 수 있습니다.
                     </p>
@@ -35,19 +35,19 @@ export function Problem() {
                     ].map((item, idx) => (
                         <div
                             key={idx}
-                            className="group p-8 rounded-2xl border border-border bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                            className="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-white border border-border flex items-center justify-center mb-6 group-hover:border-gold/50 group-hover:bg-gold/5 transition-colors">
-                                <item.icon className="w-6 h-6 text-charcoal group-hover:text-gold-dark" />
+                            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:border-gold/50 group-hover:bg-gold/10 transition-colors">
+                                <item.icon className="w-6 h-6 text-gray-300 group-hover:text-gold" />
                             </div>
-                            <h3 className="text-xl font-serif font-bold mb-3">{item.title}</h3>
-                            <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                            <h3 className="text-xl font-serif font-bold mb-3 text-white">{item.title}</h3>
+                            <p className="text-gray-400 leading-relaxed">{item.desc}</p>
                         </div>
                     ))}
                 </div>
 
                 <div className="mt-16 text-center">
-                    <div className="inline-block p-6 rounded-2xl bg-charcoal text-white relative overflow-hidden">
+                    <div className="inline-block p-6 rounded-2xl bg-white/5 border border-white/10 text-white relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
                         <p className="text-lg md:text-xl font-medium relative z-10">
                             VITAOS는 <span className="text-gold">행동, 가치, 시간, 에너지</span>의 4가지 축으로 당신의 삶을 구조화합니다.

@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #FAFAFA;
-  --color-foreground: #1A1A1A;
-  
+  --color-background: #0A0A0A;
+  --color-foreground: #EDEDED;
+
   /* Custom Colors */
   --color-gold: #D4AF37;
   --color-gold-light: #F4E5B0;
   --color-gold-dark: #B5952F;
-  --color-charcoal: #1A1A1A;
-  --color-muted: #F5F5F5;
-  --color-muted-foreground: #737373;
-  --color-border: #E5E5E5;
+  --color-charcoal: #0A0A0A;
+  /* Re-purposed/Kept for compat */
+  --color-muted: #171717;
+  --color-muted-foreground: #A1A1AA;
+  --color-border: #27272A;
 
   /* Fonts */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -25,7 +26,12 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
 }
 
