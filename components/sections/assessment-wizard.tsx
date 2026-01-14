@@ -48,7 +48,55 @@ export default function AssessmentWizard() {
         }
     }, []);
 
-    // ... (rest is same until Selection Screen)
+    const handleStart = (selectedMode: 'LITE' | 'PREMIUM') => {
+        // Clear answers if switching modes or starting fresh
+        const currentMode = localStorage.getItem("vitaos_mode");
+        if (currentMode !== selectedMode) {
+            setAnswers({});
+            setCurrentPage(0);
+            localStorage.removeItem("vitaos_answers");
+        }
+
+        setMode(selectedMode);
+        setQuestions(selectedMode === 'LITE' ? questionsLite : questionsPremium);
+    };
+
+    const handleAnswer = (questionId: number, value: number) => {
+        setAnswers((prev) => ({
+            ...prev,
+            [questionId]: value,
+        }));
+    };
+
+    const totalPages = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
+    const progress = Math.round((Object.keys(answers).filter(id => questions.find(q => q.id === Number(id))).length / questions.length) * 100);
+
+    const currentQuestions = questions.slice(
+        currentPage * QUESTIONS_PER_PAGE,
+        (currentPage + 1) * QUESTIONS_PER_PAGE
+    );
+
+    const isPageComplete = currentQuestions.every((q) => answers[q.id]);
+
+    const handleNext = () => {
+        if (currentPage < totalPages - 1) {
+            setCurrentPage(prev => prev + 1);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
+
+    const handlePrev = () => {
+        if (currentPage > 0) {
+            setCurrentPage(prev => prev - 1);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
+
+    const handleFinish = () => {
+        localStorage.setItem("vitaos_answers", JSON.stringify(answers));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.location.href = "/result";
+    };
 
     // 1. Selection Screen
     if (mode === 'IDLE') {
