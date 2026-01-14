@@ -193,13 +193,13 @@ export function GravityHero() {
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-white leading-[1.3] md:leading-[1.1] break-keep">
-                            모든 것이 떠다니는 혼란 속,<br className="hidden md:block" />
-                            <span className="text-gold italic">유일한 닻</span>을 내리다.
+                            길 잃은 풍요의 시대,<br className="hidden md:block" />
+                            <span className="text-gold italic">새로운 삶의 중력</span>을 세우다.
                         </h1>
 
                         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed break-keep">
-                            AI가 모든 것을 대체해버린 세상, 우리는 길을 잃고 목적 없이 부유하고 있습니다.<br className="hidden md:block" />
-                            흔들리지 않는 삶의 절대 좌표를 찾으세요. 당신을 위한 새로운 중력, VITAOS.
+                            모든 것이 떠다니는 혼란 속,<br className="hidden md:block" />
+                            유일한 닻을 내리다.
                         </p>
 
                         <div className="pt-8 flex flex-col items-center">
