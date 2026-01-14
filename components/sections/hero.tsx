@@ -19,7 +19,7 @@ export function Hero() {
                         지금 가장 필요한 삶의 전략을 찾아서
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-foreground leading-[1.1] animate-fade-in-up delay-100">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-foreground leading-[1.3] md:leading-[1.1] animate-fade-in-up delay-100 break-keep">
                         당신이 누구인지가 아니라,<br className="hidden md:block" />
                         지금 <span className="text-gold italic">어떤 삶의 전략</span>이 필요한지.
                     </h1>
